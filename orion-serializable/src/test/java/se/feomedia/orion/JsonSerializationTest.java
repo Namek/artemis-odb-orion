@@ -23,9 +23,16 @@ import java.nio.charset.StandardCharsets;
 import static com.artemis.Aspect.all;
 import static org.junit.Assert.*;
 import static se.feomedia.orion.OperationFactory.*;
-import static se.feomedia.orion.OperationTestUtil.process;
+//import static se.feomedia.orion.OperationTestUtil.process;
 
 public class JsonSerializationTest {
+	// taken from OperationTestUtil.process - I didn't know how to import tests from core project
+	public static void process(World world) {
+		world.delta = 1f / 60f;
+		world.process();
+	}
+
+
 	@Test
 	public void save_load_entity_with_operation() {
 		String[] string = new String[1];
